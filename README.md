@@ -22,12 +22,14 @@ source $HOME/.bash_profile
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
 ```
 
-# set vars
+**set vars**
+```
 echo "export WALLET="wallet"" >> $HOME/.bash_profile
 echo "export MONIKER="test"" >> $HOME/.bash_profile
 echo "export ELYS_CHAIN_ID="elysicstestnet-1"" >> $HOME/.bash_profile
 echo "export ELYS_PORT="38"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
+```
 
 # download binary
 cd $HOME
