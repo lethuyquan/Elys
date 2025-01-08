@@ -31,7 +31,8 @@ echo "export ELYS_PORT="38"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# download binary
+**download binary**
+```
 cd $HOME
 rm -rf bin
 mkdir bin && cd bin
@@ -39,6 +40,7 @@ wget https://github.com/elys-network/elys/releases/download/v1.5.0/elysd-v1.5.0-
 tar -xvf elysd-v1.5.0-linux-amd64.tar.gz
 chmod +x $HOME/bin/elysd
 sudo mv $HOME/bin/elysd $HOME/go/bin
+```
 
 # config and init app
 elysd init $MONIKER --chain-id $ELYS_CHAIN_ID
