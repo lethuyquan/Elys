@@ -42,12 +42,14 @@ chmod +x $HOME/bin/elysd
 sudo mv $HOME/bin/elysd $HOME/go/bin
 ```
 
-# config and init app
+**config and init app**
+```
 elysd init $MONIKER --chain-id $ELYS_CHAIN_ID
 sed -i \
 -e "s/chain-id = .*/chain-id = \"${ELYS_CHAIN_ID}\"/" \
 -e "s/keyring-backend = .*/keyring-backend = \"os\"/" \
 -e "s/node = .*/node = \"tcp:\/\/localhost:${ELYS_PORT}657\"/" $HOME/.elys/config/client.toml
+```
 
 # download genesis and addrbook
 wget -O $HOME/.elys/config/genesis.json https://server-4.itrocket.net/testnet/elys/genesis.json
