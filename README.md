@@ -51,9 +51,11 @@ sed -i \
 -e "s/node = .*/node = \"tcp:\/\/localhost:${ELYS_PORT}657\"/" $HOME/.elys/config/client.toml
 ```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.elys/config/genesis.json https://server-4.itrocket.net/testnet/elys/genesis.json
 wget -O $HOME/.elys/config/addrbook.json  https://server-4.itrocket.net/testnet/elys/addrbook.json
+```
 
 # set seeds and peers
 SEEDS="ae7191b2b922c6a59456588c3a262df518b0d130@elys-testnet-seed.itrocket.net:38656"
