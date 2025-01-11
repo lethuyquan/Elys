@@ -57,11 +57,13 @@ wget -O $HOME/.elys/config/genesis.json https://server-4.itrocket.net/testnet/el
 wget -O $HOME/.elys/config/addrbook.json  https://server-4.itrocket.net/testnet/elys/addrbook.json
 ```
 
-# set seeds and peers
+**set seeds and peers**
+```
 SEEDS="ae7191b2b922c6a59456588c3a262df518b0d130@elys-testnet-seed.itrocket.net:38656"
 PEERS="0977dd5475e303c99b66eaacab53c8cc28e49b05@elys-testnet-peer.itrocket.net:38656,7f4a326cd0e3942203e5479f550657e09356c73c@135.181.86.200:26656,a851c1ca75aa067d795dab48c83833bf2cd3dc0c@37.27.55.100:21656,92bdb02828a5479771ce5d2ac9bbdf4d243fa304@51.178.76.62:36656,7c7a172b5d99f6bf2a91468e6d16c41c677233ee@65.108.234.115:28856,20407fc4733b0bad9b4f5e74f48a535d210259f8@65.21.116.24:26656,e1b058e5cfa2b836ddaa496b10911da62dcf182e@164.152.161.168:36656,4771b02434d797b9728a072b2373e7146fc7bb01@136.243.17.170:33657,0f9a0d0b74377b6330053131eb31b8e97d527bee@37.27.81.152:26656,ae7191b2b922c6a59456588c3a262df518b0d130@65.108.231.124:38656"
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.elys/config/config.toml
+```
 
 # set custom ports in app.toml
 sed -i.bak -e "s%:1317%:${ELYS_PORT}317%g;
