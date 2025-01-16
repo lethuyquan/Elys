@@ -100,7 +100,8 @@ sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.elys/config/config.to
 sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.elys/config/config.toml
 ```
 
-# create service file
+**create service file**
+```
 sudo tee /etc/systemd/system/elysd.service > /dev/null <<EOF
 [Unit]
 Description=Elys node
@@ -115,6 +116,7 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
 # reset and download snapshot
 elysd tendermint unsafe-reset-all --home $HOME/.elys
