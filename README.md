@@ -118,14 +118,15 @@ WantedBy=multi-user.target
 EOF
 ```
 
-# reset and download snapshot
+**reset and download snapshot**
+```
 elysd tendermint unsafe-reset-all --home $HOME/.elys
 if curl -s --head curl https://server-4.itrocket.net/testnet/elys/elys_2025-01-02_631926_snap.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
   curl https://server-4.itrocket.net/testnet/elys/elys_2025-01-02_631926_snap.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.elys
     else
   echo "no snapshot found"
 fi
-
+```
 # enable and start service
 sudo systemctl daemon-reload
 sudo systemctl enable elysd
