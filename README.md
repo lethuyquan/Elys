@@ -193,21 +193,8 @@ done
 ```
 
 Create validator
-Moniker
-Identity
-Details
-I love blockchain ❤️
-Amount, uelys
-1000000
-Commission rate
-0.1
-Commission max rate
-0.2
-Commission max change rate
-0.01
-Website
-cd $HOME
-# Create validator.json file
+**Create validator.json file**
+```
 echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(elysd comet show-validator | grep -Po '\"key\":\s*\"\K[^"]*')\"},
     \"amount\": \"1000000uelys\",
     \"moniker\": \"test\",
@@ -220,6 +207,7 @@ echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(elysd
     \"commission-max-change-rate\": \"0.01\",
     \"min-self-delegation\": \"1\"
 }" > validator.json
+```
 # Create a validator using the JSON configuration
 elysd tx staking create-validator validator.json \
     --from $WALLET \
