@@ -208,12 +208,14 @@ echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(elysd
     \"min-self-delegation\": \"1\"
 }" > validator.json
 ```
-# Create a validator using the JSON configuration
+**Create a validator using the JSON configuration**
+```
 elysd tx staking create-validator validator.json \
     --from $WALLET \
     --chain-id elysicstestnet-1 \
 	--gas auto --gas-adjustment 1.5 --fees 300uelys
-	
+```
+
 Monitoring
 If you want to have set up a monitoring and alert system use our cosmos nodes monitoring guide with tenderduty
 
