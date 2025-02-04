@@ -240,10 +240,12 @@ sudo ufw allow ${ELYS_PORT}656/tcp
 sudo ufw enable
 ```
 
-Delete node
+**Delete node**
+```
 sudo systemctl stop elysd
 sudo systemctl disable elysd
 sudo rm -rf /etc/systemd/system/elysd.service
 sudo rm $(which elysd)
 sudo rm -rf $HOME/.elys
 sed -i "/ELYS_/d" $HOME/.bash_profile
+```
